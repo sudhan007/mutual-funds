@@ -51,8 +51,8 @@ export default function Chart() {
   useEffect(() => {
     const handleScroll = () => {
       if (chartRef.current) {
-        // @ts-ignore
-        const rect: any = chartRef.current.getBoundingClientRect();
+        //@ts-ignore
+        const rect = chartRef.current.getBoundingClientRect();
         const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
         setIsVisible(isVisible);
       }

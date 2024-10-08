@@ -12,7 +12,8 @@ export default function Header() {
     transition: "background 0.3s ease",
     paddingBottom: "0px",
   });
-  const [, setNavStyle] = useState({ paddingTop: "65px" });
+  //@ts-ignore
+  const [navStyle, setNavStyle] = useState({ paddingTop: "65px" });
   const handleScroll = () => {
     const scrollY = window.scrollY;
 
@@ -45,7 +46,7 @@ export default function Header() {
   return (
     <>
       <div
-        className='h-[100vh] w-[100vw]'
+        className='h-[100vh] w-full overflow-hidden'
         style={{
           background:
             "linear-gradient(149.33deg, #0A155B 0.87%, #060D34 94.27%)",
