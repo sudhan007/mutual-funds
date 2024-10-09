@@ -68,3 +68,7 @@
 * {
   overflow-x: hid;
 }
+
+:global(body) {
+  font-family: "Inter", sans-serif;
+}

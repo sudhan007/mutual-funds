@@ -8,31 +8,31 @@ import bubble1 from "../assets/bubble1.png"
 import bubble2 from "../assets/bubble2.png"
 export default function PlanCards() {
     return (
-        <div className="relative  mt-[200px]">
-            <div className="absolute -mt-[10px] -z-20">
+        <div className="relative  lg:mt-[200px] mt-[100px]">
+            <div className="absolute  lg:-mt-[40px] -z-20 hidden lg:block">
                 <img src={Ellipse3} alt="ellipse" className="w-[393px] h-[391px]" />
             </div>
 
-            <div className=" flex justify-center items-center flex-col ">
-                <div className="text-[42px] font-bold flex  gap-3">
-                <p className="bg-[linear-gradient(91.73deg,#1B2EA1_48.22%,#090F34_127.67%)] bg-clip-text text-transparent text-[42px] font-bold">
+            <div className=" flex md:px-0 px-4 justify-center md:items-center  flex-col ">
+                <div className="md:text-[42px]   text-[30px] font-bold flex  gap-3">
+                <p className="md:text-center text-left  bg-[linear-gradient(91.73deg,#1B2EA1_48.22%,#090F34_127.67%)] bg-clip-text text-transparent  font-bold">
   Services
 </p>
                 <span className="texxt-[#2C2C2C] ">we Offer</span>
                 </div>
-                <p className="mt-[30px] text-[#535252] text-[36px] w-[460px] text-center">We help you kick start your Investment journey</p>
+                <p className="lg:mt-[30px] mt-3 text-[#535252] md:text-[36px] text-[20px] md:w-[460px] w-full md:text-center text-left ">We help you kick start your Investment journey</p>
 
             </div>
 <div className="flex justify-end">
-    <div className="absolute -mt-[30px] mr-[180px]">
+    <div className="absolute lg:-mt-[30px] mr-5 lg:mr-[180px]">
     <img src={bubble1} alt="" className="w-[43px]  h-[42px] " />
     </div>
    
 </div>
 
-            <div className="w-full flex flex-col mt-[72px] justify-center items-center">
-                <div className="flex flex-row gap-[20px]  w-[90%]   justify-center items-center">
-                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white w-[400px] h-[242px] ">
+            <div className="w-full flex flex-col lg:mt-[72px] mt-5 justify-center items-center">
+                <div className="flex lg:flex-row flex-col gap-[20px]  w-[100%] px-5  justify-center items-center">
+                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white md:w-[400px] md:h-[282px] w-[90%] h-auto ">
                         <div>
                             <div className="flex gap-[12px] items-center  ">
                                 <img src={earning} alt="" className="w-[30px] h-[30px]" />
@@ -49,7 +49,7 @@ export default function PlanCards() {
                         </div>
                     </div>
 
-                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white w-[400px] h-[242px] ">
+                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white md:w-[400px] md:h-[282px] w-[90%] h-auto ">
                         <div>
                             <div className="flex gap-[12px] items-center  ">
                                 <img src={goal} alt="" className="w-[30px] h-[30px]" />
@@ -64,7 +64,7 @@ export default function PlanCards() {
                         </div>
                     </div>
 
-                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white w-[400px] h-[242px] ">
+                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white md:w-[400px] md:h-[282px] w-[90%] h-auto ">
                         <div>
                             <div className="flex gap-[12px]  items-center ">
                                 <img src={rupee} alt="" className="w-[30px] h-[30px]" />
@@ -80,8 +80,8 @@ export default function PlanCards() {
                     </div>
                 </div>
                
-                <div className="flex w-[90%] items-center justify-center gap-[20px] mt-[54px] ">
-                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl w-[400px] h-[242px]   bg-white ">
+                <div className=" flex lg:flex-row flex-col w-[100%] items-center justify-center gap-[20px] mt-[54px] ">
+                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl w-[90%] h-auto  bg-white  md:w-[400px] md:h-[282px] ">
                         <div>
                             <div className="flex gap-[12px] items-center  ">
                                 <img src={increase} alt="" className="w-[30px] h-[30px]" />
@@ -95,7 +95,7 @@ export default function PlanCards() {
                         </div>
                     </div>
 
-                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white w-[400px] h-[242px]  ">
+                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white md:w-[400px] md:h-[282px] w-[90%] h-auto ">
                         <div>
                             <div className="flex gap-[12px] items-center  ">
                                 <img src={tax} alt="" className="w-[30px] h-[30px]" />
@@ -113,7 +113,7 @@ export default function PlanCards() {
                     </div>
                 </div>
             </div>
-            <div className="flex justify-start ml-[123px] -mt-[67px]">
+            <div className="flex justify-start lg:ml-[123px] ml-5 lg:-mt-[67px]">
     <div className="absolute">
     <img src={bubble2} alt="" className="w-[43px]  h-[42px] " />
     </div>

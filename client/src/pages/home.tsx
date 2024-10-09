@@ -7,6 +7,10 @@ import Diverse_portfolio from "./diverse_portfolio"
 import  Chart  from "./chart"
 import Investment_journey from "./investment_journey"
 import YourGoal from "./yourGoal"
+import Allocation_Goal from "./allocationGoal"
+import Your_Asset from "./your_Asset"
+import Footer from "./Footer"
+
 
 export default function Home(){
 
@@ -21,6 +25,10 @@ export default function Home(){
 <Chart />
 <Investment_journey />
 <YourGoal />
+<Allocation_Goal />
+<Your_Asset />
+<Footer />
+
 </>
 
     )

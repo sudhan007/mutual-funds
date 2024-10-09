@@ -1,20 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { Pie, PieChart } from "recharts";
 import { ChartContainer, ChartTooltip } from "../components/ui/chart";
+import { TrendingUp } from "lucide-react";
 
-export const description = "A pie chart with gradient background";
+export const description = "A donut chart";
 
 const chartData = [
-  { key: "Gold", values: 15, fill: "url(#gold-gradient)" },
-  { key: "Crypto", values: 2, fill: "url(#crypto-gradient)" },
-  {
-    key: "International Equity",
-    values: 13,
-    fill: "url(#international-gradient)",
-  },
-  { key: "Domestic Equity", values: 35, fill: "url(#domestic-gradient)" },
-  { key: "Debt", values: 5, fill: "url(#debt-gradient)" },
-  { key: "Realestate", values: 30, fill: "url(#realestate-gradient)" },
+  { key: "Real Estate / Reits", values: 29, fill: "url(#realestate-gradient)" },
+  { key: "Crypto", values: 1, fill: "url(#crypto-gradient)" },
+  { key: "Gold", values: 19, fill: "url(#gold-gradient)" },
+  { key: "Debt", values: 15, fill: "url(#debt-gradient)" },
+  { key: "International Equity", values: 6, fill: "url(#international-gradient)" },
+  { key: "Domestic Equity", values: 30, fill: "url(#domestic-gradient)" },
 ];
 
 const chartConfig = {
@@ -23,32 +20,23 @@ const chartConfig = {
   },
 };
 
-export default function Chart() {
+export default function Piechart() {
   const [isVisible, setIsVisible] = useState(false);
   const chartRef = useRef(null);
-  const [chartSize, setChartSize] = useState({
-    width: 600,
-    height: 600,
-    outerRadius: 180,
-  });
+  const [chartSize, setChartSize] = useState(300); 
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
-        setChartSize({
-          width: 600,
-          height: 600,
-          outerRadius: 180,
-        });
+        setChartSize(450); 
       } else {
-        setChartSize({
-          width: 300,
-          height: 300,
-          outerRadius: 120,
-        });
+        setChartSize(300); 
       }
     };
+
+  
     handleResize();
+
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -79,82 +67,41 @@ export default function Chart() {
 
   return (
     <>
-      <div className="flex lg:flex-row flex-col justify-around items-center">
-        <div className="flex justify-center items-center w-full">
+      <div className="flex flex-col lg:flex-row justify-around items-center">
+        <div className="flex justify-center items-center ">
           <ChartContainer
             config={chartConfig}
-            className="aspect-square lg:max-h-[700px] max-h-[300px] max-w-[300px] lg:max-w-[600px]" // Adjust container sizes
+            className="aspect-square lg:max-h-[450px] max-h-[300px] max-w-[450px]"
           >
             <div ref={chartRef} className="flex items-center justify-center">
-              <PieChart width={chartSize.width} height={chartSize.height}>
+              <PieChart width={chartSize} height={chartSize}>
                 <svg>
                   <defs>
-                    <linearGradient
-                      id="gold-gradient"
-                      x1="0"
-                      y1="0"
-                      x2="1"
-                      y2="1"
-                    >
+                    {/* Define gradients */}
+                    <linearGradient id="gold-gradient" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="24.4%" stopColor="#18C5F3" />
                       <stop offset="51.91%" stopColor="#49DBDA" />
                       <stop offset="89.04%" stopColor="#94F9B3" />
                     </linearGradient>
-
-                    <linearGradient
-                      id="debt-gradient"
-                      x1="0"
-                      y1="0"
-                      x2="1"
-                      y2="1"
-                    >
+                    <linearGradient id="debt-gradient" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="-44.8%" stopColor="#2C6470" />
                       <stop offset="99.27%" stopColor="#54BFD6" />
                     </linearGradient>
-
-                    <radialGradient
-                      id="crypto-gradient"
-                      cx="50%"
-                      cy="50%"
-                      r="50%"
-                      fx="50%"
-                      fy="50%"
-                    >
+                    <radialGradient id="crypto-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
                       <stop offset="0%" stopColor="#FDFF69" />
                       <stop offset="100%" stopColor="#F7CB46" />
                     </radialGradient>
-
-                    <linearGradient
-                      id="international-gradient"
-                      x1="0"
-                      y1="0"
-                      x2="1"
-                      y2="1"
-                    >
+                    <linearGradient id="international-gradient" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="0%" stopColor="#FF4F4F" />
                       <stop offset="50%" stopColor="#D45E44" />
                       <stop offset="100%" stopColor="#D42727" />
                     </linearGradient>
-
-                    <linearGradient
-                      id="domestic-gradient"
-                      x1="0"
-                      y1="0"
-                      x2="1"
-                      y2="1"
-                    >
+                    <linearGradient id="domestic-gradient" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="12.1%" stopColor="#FF6444" />
                       <stop offset="56.23%" stopColor="#FFA12B" />
                       <stop offset="85.55%" stopColor="#F6C61E" />
                     </linearGradient>
-
-                    <linearGradient
-                      id="realestate-gradient"
-                      x1="0"
-                      y1="0"
-                      x2="1"
-                      y2="1"
-                    >
+                    <linearGradient id="realestate-gradient" x1="0" y1="0" x2="1" y2="1">
                       <stop offset="22.14%" stopColor="#6C26E8" />
                       <stop offset="48.72%" stopColor="#7D5BF9" />
                       <stop offset="75.24%" stopColor="#9193E9" />
@@ -179,7 +126,8 @@ export default function Chart() {
                   data={chartData}
                   dataKey="values"
                   nameKey="key"
-                  outerRadius={chartSize.outerRadius}
+                  innerRadius={chartSize * 0.2} // Inner radius proportional to chart size
+                  outerRadius={chartSize * 0.4} // Outer radius proportional to chart size
                   labelLine={false}
                   label={({ cx, cy, midAngle, innerRadius, outerRadius, value }) => {
                     const RADIAN = Math.PI / 180;
@@ -188,14 +136,7 @@ export default function Chart() {
                     const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
                     return (
-                      <text
-                        x={x}
-                        y={y}
-                        fill="black"
-                        textAnchor={"middle"}
-                        dominantBaseline="central"
-                        fontSize={11}
-                      >
+                      <text x={x} y={y} fill="black" textAnchor="middle" dominantBaseline="central" fontSize={11}>
                         {`${value}%`}
                       </text>
                     );
@@ -207,26 +148,18 @@ export default function Chart() {
           </ChartContainer>
         </div>
 
-        <div className="w-full flex justify-center">
-          <div className="flex lg:flex-col w-5/6 flex-row justify-center lg:items-start items-center flex-wrap lg:gap-[30px] gap-3">
+        <div className="">
+          <div className="flex  lg:flex-col flex-wrap justify-center items-center lg:items-start flex-row gap-[30px]">
             {chartData.map((entry) => (
-              <div
-                key={entry.key}
-                className="flex items-center lg:gap-[20px] gap-2 font-light"
-              >
-                <svg className="lg:w-[32px] lg:h-[32px] w-[15px] h-[15px]" radius={180}>
+              <div key={entry.key} className="flex items-center gap-[20px] font-light">
+                <svg className="lg:w-[32px] lg:h-[32px] w-[15px] h-[15px]">
                   <circle cx="50%" cy="50%" r="50%" fill={entry.fill} />
                 </svg>
-                <span className="lg:text-3xl text-base">{entry.key}</span>
+                <span className="md:text-3xl text-base">{entry.key}</span>
               </div>
             ))}
           </div>
         </div>
-      </div>
-      <div className="text-center lg:mt-[40px] mt-[29px]">
-        <h1 className="md:text-[40px] text-lg font-normal text-[#6B6B6B]">
-          Here’s the diverse portfolio
-        </h1>
       </div>
     </>
   );
