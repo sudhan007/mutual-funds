@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import One from "../assets/01.png";
 import { ChartContainer } from "../components/ui/chart";
 import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts";
-import { XAxisTickProps } from "recharts";
+//import { XAxisTickProps } from "recharts";
 
 const chartDataList = [
     [

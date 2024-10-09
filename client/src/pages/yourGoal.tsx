@@ -5,8 +5,14 @@ import {
     ChartContainer,
 } from "../components/ui/chart";
 import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts";
+// @ts-ignore
 import { XAxisTickProps } from "recharts"; 
 
+interface GradientRectProps {
+  x: number;
+  y: number;
+  gradientId: string;
+}
 const chartDataList = [
     [
         {
@@ -192,8 +198,8 @@ const renderCustomBarShape = (props: any) => {
     return <rect x={x} y={y} width={width} height={height} fill={fillColor} radius={0} />;
 };
 
-const GradientRect = ({ x, y, gradientId }) => (
-  <rect x={x} y={y} width={4} height={15} fill={gradientId} />
+const GradientRect: React.FC<GradientRectProps> = ({ x, y, gradientId }) => (
+  <rect x={x} y={y} width={4} height={15} fill={`url(#${gradientId})`} />
 );
 const CustomXAxisTick: React.FC<XAxisTickProps> = ({ x, y, payload }) => {
   const gradientId = (() => {

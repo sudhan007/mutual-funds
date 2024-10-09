@@ -58,7 +58,7 @@ export default function Header() {
               className='md:px-[75px]   md:py-2  flex justify-between items-center fixed top-0 left-0 w-full bg-transparent z-50'
               style={headerStyle}>
               <div className='flex items-center md:pl-0 pl-[23px] gap-[20px]'>
-                <img src={Logo} alt='' className='lg:w-24  w-16' />
+                <img src={Logo} alt='' className='lg:w-[116px]  w-16' />
                 <p className='text-white text-[28px]  hidden md:block '>Singaar Wealth</p>
               </div>
               <div className='lg:flex-row items-end   pr-2 md:pr-0 flex md:gap-[26px] gap-2  flex-col '>

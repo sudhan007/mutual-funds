@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Pie, PieChart } from "recharts";
 import { ChartContainer, ChartTooltip } from "../components/ui/chart";
-import { TrendingUp } from "lucide-react";
+//import { TrendingUp } from "lucide-react";
 
 export const description = "A donut chart";
 
