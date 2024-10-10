@@ -140,7 +140,7 @@ export default function Header({ aboutRef }: HeaderProps) {
           </div>
 
           {/* Left and Right bars */}
-          <div className='relative lg:h-[100vh] h-[820px]  flex items-end w-[100vw]'>
+          <div className='relative h-screen flex items-end w-[100vw]'>
             <div className='flex flex-row justify-between items-end w-full'>
               <div>
                 <img src={leftbar} alt='' className='md:h-[300px] md:w-[210px]  h-[200px] w-[140px]' />

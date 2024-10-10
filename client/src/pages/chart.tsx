@@ -57,12 +57,10 @@ export default function Chart() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
+          
             setIsVisible(true);  
-          }, 100); 
-        } else {
-          setIsVisible(false);
-        }
+          
+        } 
       },
       { threshold: 0.1 }
     );
