@@ -5,7 +5,10 @@ import leftbar from "../assets/leftbar.png";
 import rightbar from "../assets/rightbar.png";
 import { useEffect, useState } from "react";
 
-export default function Header({ aboutRef }) {
+interface HeaderProps {
+  aboutRef: React.RefObject<HTMLDivElement>;
+}
+export default function Header({ aboutRef }: HeaderProps) {
   const [headerStyle, setHeaderStyle] = useState({
     background: "transparent",
     paddingTop: "65px",
