@@ -221,7 +221,7 @@ export default function Allocation_Goal() {
                                                                     position="right" 
                                                                     offset={10} 
                                                                     fill="#000" 
-                                                                    fontSize={12} 
+                                                                    fontSize={14} 
                                                                 />
                                                             </Bar>
                                                         </BarChart>

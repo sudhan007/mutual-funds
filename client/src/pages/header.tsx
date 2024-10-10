@@ -5,7 +5,7 @@ import leftbar from "../assets/leftbar.png";
 import rightbar from "../assets/rightbar.png";
 import { useEffect, useState } from "react";
 
-export default function Header() {
+export default function Header({ aboutRef }) {
   const [headerStyle, setHeaderStyle] = useState({
     background: "transparent",
     paddingTop: "65px",
@@ -36,9 +36,14 @@ export default function Header() {
       });
     }
   };
+  const handleScrollDown = () => {
+    if (aboutRef.current) {
+      aboutRef.current.scrollIntoView({ behavior: "smooth",block: "start" , inline: "nearest", });
+    }
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -46,12 +51,12 @@ export default function Header() {
   return (
     <>
       <div
-        className='lg:h-[796px] h-[820px] w-[100vw] overflow-hidden'
+        className='lg:h-[100vh] h-screen w-screen overflow-hidden'
         style={{
           background:
             "linear-gradient(149.33deg, #0A155B 0.87%, #060D34 94.27%)",
         }}>
-        <div className='h-full w-full'>
+        <div className='h-full w-full '>
           <div className='absolute w-full '>
             {/* header */}
             <div
@@ -70,13 +75,18 @@ export default function Header() {
                 </div>
                 <div className='flex justify-center items-center gap-[5px]'>
                   <img src={Phone} alt='' className='md:w-[29px]  md:h-[29px] h-[16px] w-[17px]' />
-                  <p className='text-white md:text-[19px] text-[14px]'>9090717130</p>
+                  <a 
+    href='tel:+919090717130' 
+    className='text-white md:text-[19px] text-[14px]'
+  >
+    +91 9090717130
+  </a>
                 </div>
               </div>
             </div>
 
             {/* hero section */}
-            <div className='text-center mt-[160px] flex justify-center items-center flex-col'>
+            <div className='text-center lg:h-[80vh] mt-36  flex justify-center items-center flex-col'>
               <div className='lg:w-3/4 w-full  mt-16'>
                 <div>
                   <p className='lg:text-[70px] text-[46px] text-[#FCECEC] px-1  flex flex-col font-bold'>
@@ -109,11 +119,12 @@ export default function Header() {
               {/* scroll Button */}
               <div className='mt-[75px] w-full flex justify-center items-center'>
                 <button
+                  onClick={handleScrollDown} 
                   style={{
                     background:
                       "linear-gradient(328.68deg, #FFEBC8 13.03%, #FFFBF4 120.61%)",
                   }}
-                  className='lg:w-[243px] w-[165px] h-[54px] border-[1px] lg:h-[72px] rounded-full text-[#141414] lg:text-[24px] text-lg'>
+                  className='lg:w-[243px] z-40 w-[165px] h-[54px] border-[1px] lg:h-[72px] rounded-full text-[#141414] lg:text-[24px] text-lg'>
                   Scroll Down
                 </button>
               </div>
@@ -121,7 +132,7 @@ export default function Header() {
           </div>
 
           {/* Left and Right bars */}
-          <div className='relative lg:h-[796px] h-[820px]  flex items-end w-[100vw]'>
+          <div className='relative lg:h-[100vh] h-[820px]  flex items-end w-[100vw]'>
             <div className='flex flex-row justify-between items-end w-full'>
               <div>
                 <img src={leftbar} alt='' className='md:h-[300px] md:w-[210px]  h-[200px] w-[140px]' />

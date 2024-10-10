@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Pie, PieChart } from "recharts";
 import { ChartContainer, ChartTooltip } from "../components/ui/chart";
-//import { TrendingUp } from "lucide-react";
 
 export const description = "A donut chart";
 
@@ -23,20 +22,18 @@ const chartConfig = {
 export default function Piechart() {
   const [isVisible, setIsVisible] = useState(false);
   const chartRef = useRef(null);
-  const [chartSize, setChartSize] = useState(300); 
+  const [chartSize, setChartSize] = useState(300);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
-        setChartSize(450); 
+        setChartSize(450);
       } else {
-        setChartSize(300); 
+        setChartSize(300);
       }
     };
 
-  
     handleResize();
-
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -49,6 +46,8 @@ export default function Piechart() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+        } else {
+          setIsVisible(false)
         }
       },
       { threshold: 0.1 }
@@ -66,9 +65,9 @@ export default function Piechart() {
   }, []);
 
   return (
-    <>
-      <div className="flex flex-col lg:flex-row justify-around items-center">
-        <div className="flex justify-center items-center ">
+    <div className="flex flex-col items-center justify-center w-full h-full">
+      <div className="flex flex-col lg:flex-row justify-around items-center lg:gap-[100px]"> {/* Adjusted gap */}
+        <div className="flex justify-center items-center mb-4">
           <ChartContainer
             config={chartConfig}
             className="aspect-square lg:max-h-[450px] max-h-[300px] max-w-[450px]"
@@ -126,17 +125,18 @@ export default function Piechart() {
                   data={chartData}
                   dataKey="values"
                   nameKey="key"
-                  innerRadius={chartSize * 0.2} // Inner radius proportional to chart size
-                  outerRadius={chartSize * 0.4} // Outer radius proportional to chart size
+                  innerRadius={chartSize * 0.15} // Reduced inner circle size
+                  outerRadius={chartSize * 0.4} 
                   labelLine={false}
                   label={({ cx, cy, midAngle, innerRadius, outerRadius, value }) => {
                     const RADIAN = Math.PI / 180;
-                    const radius = innerRadius + (outerRadius - innerRadius) * 0.8;
+                    const radius = innerRadius + (outerRadius - innerRadius) * 0.6; // Reduced to bring text closer
                     const x = cx + radius * Math.cos(-midAngle * RADIAN);
                     const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
                     return (
-                      <text x={x} y={y} fill="black" textAnchor="middle" dominantBaseline="central" fontSize={11}>
+                      <text x={x} y={y} fill="black" textAnchor="middle" dominantBaseline="central" 
+                      className="text-[12px] lg:text-[14px]">
                         {`${value}%`}
                       </text>
                     );
@@ -148,19 +148,17 @@ export default function Piechart() {
           </ChartContainer>
         </div>
 
-        <div className="">
-          <div className="flex  lg:flex-col flex-wrap justify-center items-center lg:items-start flex-row gap-[30px]">
-            {chartData.map((entry) => (
-              <div key={entry.key} className="flex items-center gap-[20px] font-light">
-                <svg className="lg:w-[32px] lg:h-[32px] w-[15px] h-[15px]">
-                  <circle cx="50%" cy="50%" r="50%" fill={entry.fill} />
-                </svg>
-                <span className="md:text-3xl text-base">{entry.key}</span>
-              </div>
-            ))}
-          </div>
+        <div className="flex flex-wrap  lg:flex-col  justify-center lg:items-start gap-[30px]">
+          {chartData.map((entry) => (
+            <div key={entry.key} className="flex  items-center gap-[20px] font-light">
+              <svg className="lg:w-[32px] lg:h-[32px] w-[15px] h-[15px]">
+                <circle cx="50%" cy="50%" r="50%" fill={entry.fill} />
+              </svg>
+              <span className="md:text-3xl text-base">{entry.key}</span>
+            </div>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }

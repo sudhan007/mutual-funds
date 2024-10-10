@@ -7,11 +7,7 @@ export const description = "A pie chart with gradient background";
 const chartData = [
   { key: "Gold", values: 15, fill: "url(#gold-gradient)" },
   { key: "Crypto", values: 2, fill: "url(#crypto-gradient)" },
-  {
-    key: "International Equity",
-    values: 13,
-    fill: "url(#international-gradient)",
-  },
+  { key: "International Equity", values: 13, fill: "url(#international-gradient)" },
   { key: "Domestic Equity", values: 35, fill: "url(#domestic-gradient)" },
   { key: "Debt", values: 5, fill: "url(#debt-gradient)" },
   { key: "Realestate", values: 30, fill: "url(#realestate-gradient)" },
@@ -48,9 +44,10 @@ export default function Chart() {
         });
       }
     };
-    handleResize();
-    window.addEventListener("resize", handleResize);
 
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -61,6 +58,8 @@ export default function Chart() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+        } else {
+          setIsVisible(false)
         }
       },
       { threshold: 0.1 }
@@ -79,16 +78,16 @@ export default function Chart() {
 
   return (
     <>
-      <div className="flex lg:flex-row flex-col justify-around items-center">
-        <div className="flex justify-center items-center w-full">
-          <ChartContainer
-            config={chartConfig}
-            className="aspect-square lg:max-h-[700px] max-h-[300px] max-w-[300px] lg:max-w-[600px]" // Adjust container sizes
-          >
-            <div ref={chartRef} className="flex items-center justify-center">
-              <PieChart width={chartSize.width} height={chartSize.height}>
-                <svg>
-                  <defs>
+    <div className="flex lg:flex-row flex-col justify-between items-center w-full ">
+    <div className="flex lg:justify-end justify-center items-center w-full">
+  <ChartContainer
+    config={chartConfig}
+    className="aspect-square lg:max-h-[700px] max-h-[300px] max-w-[300px] lg:max-w-[600px]"
+  >
+    <div ref={chartRef} className="flex  items-center justify-center relative">
+      <PieChart width={chartSize.width} height={chartSize.height}>
+        <svg>
+        <defs>
                     <linearGradient
                       id="gold-gradient"
                       x1="0"
@@ -160,69 +159,77 @@ export default function Chart() {
                       <stop offset="75.24%" stopColor="#9193E9" />
                     </linearGradient>
                   </defs>
-                </svg>
+        </svg>
 
-                <ChartTooltip
-                  content={({ payload }) => {
-                    if (payload && payload.length > 0) {
-                      const { key, values } = payload[0].payload;
-                      return (
-                        <div className="bg-white px-2 py-1 rounded">
-                          <p>{`${key}: ${values}%`}</p>
-                        </div>
-                      );
-                    }
-                    return null;
-                  }}
-                />
-                <Pie
-                  data={chartData}
-                  dataKey="values"
-                  nameKey="key"
-                  outerRadius={chartSize.outerRadius}
-                  labelLine={false}
-                  label={({ cx, cy, midAngle, innerRadius, outerRadius, value }) => {
-                    const RADIAN = Math.PI / 180;
-                    const radius = innerRadius + (outerRadius - innerRadius) * 0.8;
-                    const x = cx + radius * Math.cos(-midAngle * RADIAN);
-                    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+        <ChartTooltip
+          content={({ payload }) => {
+            if (payload && payload.length > 0) {
+              const { key, values } = payload[0].payload;
+              return (
+                <div className="bg-white px-2 py-1 rounded">
+                  <p>{`${key}: ${values}%`}</p>
+                </div>
+              );
+            }
+            return null;
+          }}
+        />
+        <Pie
+          data={chartData}
+          dataKey="values"
+          nameKey="key"
+          outerRadius={chartSize.outerRadius}
+          cx="50%" 
+          cy="50%" 
+          startAngle={90} 
+          endAngle={450} 
+          labelLine={false}
+          label={({ cx, cy, midAngle, innerRadius, outerRadius, value }) => {
+            const RADIAN = Math.PI / 180;
+            const radius = innerRadius + (outerRadius - innerRadius) * 0.7;
+            const x = cx + radius * Math.cos(-midAngle * RADIAN);
+            const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
-                    return (
-                      <text
-                        x={x}
-                        y={y}
-                        fill="black"
-                        textAnchor={"middle"}
-                        dominantBaseline="central"
-                        fontSize={11}
-                      >
-                        {`${value}%`}
-                      </text>
-                    );
-                  }}
-                  isAnimationActive={isVisible}
-                />
-              </PieChart>
-            </div>
-          </ChartContainer>
-        </div>
-
-        <div className="w-full flex justify-center">
-          <div className="flex lg:flex-col w-5/6 flex-row justify-center lg:items-start items-center flex-wrap lg:gap-[30px] gap-3">
-            {chartData.map((entry) => (
-              <div
-                key={entry.key}
-                className="flex items-center lg:gap-[20px] gap-2 font-light"
+            return (
+              <text
+                x={x}
+                y={y}
+                fill="black"
+                textAnchor="middle"
+                dominantBaseline="central"
+                className="text-[12px] lg:text-[16px]"
               >
-                <svg className="lg:w-[32px] lg:h-[32px] w-[15px] h-[15px]" radius={180}>
-                  <circle cx="50%" cy="50%" r="50%" fill={entry.fill} />
-                </svg>
-                <span className="lg:text-3xl text-base">{entry.key}</span>
-              </div>
-            ))}
+                {`${value}%`}
+              </text>
+            );
+          }}
+          isAnimationActive={isVisible}
+          animationDuration={800}
+          animationEasing="ease-out"
+        />
+      </PieChart>
+    </div>
+  </ChartContainer>
+</div>
+
+
+  <div className="w-full flex lg:justify-start    justify-center lg:items-start ">
+    <div className="flex w-full justify-center  items-center lg:ml-32 ">
+      <div className="flex lg:flex-col w-5/6 flex-row justify-center lg:items-start items-center flex-wrap lg:gap-[30px] gap-3">
+        {chartData.map((entry) => (
+          <div key={entry.key} className="flex items-center lg:gap-[20px] gap-2 font-light">
+            <svg className="lg:w-[32px] lg:h-[32px] w-[15px] h-[15px]" radius={180}>
+              <circle cx="50%" cy="50%" r="50%" fill={entry.fill} />
+            </svg>
+            <span className="lg:text-3xl text-base">{entry.key}</span>
           </div>
-        </div>
+        ))}
       </div>
+    </div>
+  </div>
+</div>
+
+
       <div className="text-center lg:mt-[40px] mt-[29px]">
         <h1 className="md:text-[40px] text-lg font-normal text-[#6B6B6B]">
           Here’s the diverse portfolio

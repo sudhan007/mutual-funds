@@ -4,7 +4,7 @@ import arrow from "../assets/arrow_growth.png"
 export default function About() {
 
     return (
-        <div className="">
+        <div className="relative pt-20">
             <div>
                 <div className="absolute md:-mt-[74px] -mt-14">
                     <img src={ellipse1} alt="eclipse" className="md:w-[239px] w-[122px] md:ml-[58px] ml-0  md:h-[229px] h-[117px] " />

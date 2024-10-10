@@ -40,7 +40,7 @@ export default function Partners() {
     if (isLargeScreen) {
       return (
         <>
-          <div className="flex justify-center items-center flex-wrap gap-[53px]">
+          <div className="flex mb-20 justify-center items-center flex-wrap gap-[63px]">
             {images.slice(0, 4).map((image, index) => (
               <img key={index} src={image.src} alt={image.alt} className={`${image.width} ${image.height}`} />
             ))}
@@ -55,12 +55,12 @@ export default function Partners() {
     } else {
       return (
         <>
-          <div className="w-full flex justify-center items-center flex-wrap gap-[8px]">
+          <div className="w-full mb-16 flex justify-center items-center flex-wrap gap-[8px]">
             {images.slice(0, 3).map((image, index) => (
               <img key={index} src={image.src} alt={image.alt} className={`${image.width} ${image.height}`} />
             ))}
           </div>
-          <div className="w-full flex justify-center items-center flex-wrap gap-[16px] mt-6">
+          <div className="w-full flex justify-center mb-16 items-center flex-wrap gap-[16px] mt-6">
             {images.slice(3, 5).map((image, index) => (
               <img key={index} src={image.src} alt={image.alt} className={`${image.width} ${image.height}`} />
             ))}
@@ -77,11 +77,11 @@ export default function Partners() {
   };
 
   return (
-    <div className="lg:mt-[107px] mt-[35px] mx-0 2xl:mx-[200px] flex justify-center items-center flex-col">
+    <div className="lg:mt-[160px] mt-[55px] mx-0 2xl:mx-[200px] flex justify-center items-center flex-col">
       <div>
         <h1 className="text-[#667085] text-[30px]">Our Distribution Partners</h1>
       </div>
-      <div className="lg:mt-[60px]  mt-[30px]">
+      <div className="lg:mt-[60px]  mt-[70px]">
         {renderImages()}
       </div>
     </div>
