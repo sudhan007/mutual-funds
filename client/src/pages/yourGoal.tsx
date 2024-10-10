@@ -279,7 +279,7 @@ export default function YourGoal() {
               return (
                 <div className="flex lg:mt-[74px] lg:mb-[56px] justify-center items-center" key={chartIndex}>
                   <div className="lg:w-5/6 w-screen justify-center flex items-center" ref={(el) => (chartRefs.current[uniqueIndex] = el)} data-index={uniqueIndex}>
-                    <div className="md:w-[400px] w-[90%] md:h-[312px] rounded shadow-lg border border-gray-100 flex flex-col gap-5 lg:gap-[40px] p-5">
+                    <div className="md:w-[460px] w-[90%] md:h-[312px] rounded shadow-lg border border-gray-100 flex flex-col gap-5 lg:gap-[40px] p-5">
                       <div>
                         <p className="text-[18px] font-medium  ">{chartData.title}</p>
                       </div>
