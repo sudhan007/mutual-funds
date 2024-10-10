@@ -15,20 +15,20 @@ export default function PlanCards() {
 
             <div className=" flex md:px-0 px-4 justify-center md:items-center  flex-col ">
                 <div className="md:text-[42px]   text-[30px] font-bold flex  gap-3">
-                <p className="md:text-center text-left  bg-[linear-gradient(91.73deg,#1B2EA1_48.22%,#090F34_127.67%)] bg-clip-text text-transparent  font-bold">
-  Services
-</p>
-                <span className="texxt-[#2C2C2C] ">we Offer</span>
+                    <p className="md:text-center text-left  bg-[linear-gradient(91.73deg,#1B2EA1_48.22%,#090F34_127.67%)] bg-clip-text text-transparent  font-bold">
+                        Services
+                    </p>
+                    <span className="texxt-[#2C2C2C] ">we Offer</span>
                 </div>
                 <p className="lg:mt-[30px] mt-3 text-[#535252] md:text-[36px] text-[20px] md:w-[460px] w-full md:text-center text-left ">We help you kick start your Investment journey</p>
 
             </div>
-<div className="flex justify-end">
-    <div className="absolute lg:-mt-[30px] mr-5 lg:mr-[180px]">
-    <img src={bubble1} alt="" className="w-[43px]  h-[42px] " />
-    </div>
-   
-</div>
+            <div className="flex justify-end">
+                <div className="absolute lg:-mt-[30px] mr-5 lg:mr-[180px]">
+                    <img src={bubble1} alt="" className="w-[43px]  h-[42px] " />
+                </div>
+
+            </div>
 
             <div className="w-full flex flex-col lg:mt-[72px] mt-5 justify-center items-center">
                 <div className="flex lg:flex-row flex-col gap-[20px]  w-[100%] px-5  justify-center items-center">
@@ -79,7 +79,7 @@ export default function PlanCards() {
                         </div>
                     </div>
                 </div>
-               
+
                 <div className=" flex lg:flex-row flex-col w-[100%] items-center justify-center gap-[20px] mt-[54px] ">
                     <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl w-[90%] h-auto  bg-white  md:w-[400px] md:h-[282px] ">
                         <div>
@@ -114,11 +114,11 @@ export default function PlanCards() {
                 </div>
             </div>
             <div className="flex justify-start lg:ml-[123px] ml-5 lg:-mt-[67px]">
-    <div className="absolute">
-    <img src={bubble2} alt="" className="w-[43px]  h-[42px] " />
-    </div>
-   
-</div>
+                <div className="absolute">
+                    <img src={bubble2} alt="" className="w-[43px]  h-[42px] " />
+                </div>
+
+            </div>
         </div>
     )
 }

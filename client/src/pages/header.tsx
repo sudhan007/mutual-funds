@@ -70,21 +70,26 @@ export default function Header({ aboutRef }: HeaderProps) {
                 <p className='text-white text-[28px]  hidden md:block '>Singaar Wealth</p>
               </div>
               <div className='lg:flex-row items-end   pr-2 md:pr-0 flex md:gap-[26px] gap-2  flex-col '>
-                <div className='flex gap-[5px] justify-center items-center '>
-                  <img src={Mail} alt='' className='md:w-[29px] md:h-[29px] h-[14px] w-[18px]' />
-                  <p className='text-white  md:text-[19px] text-[14px]'>
-                    ajithjoseph@singaar.in
-                  </p>
-                </div>
+              <a href="mailto:ajithjoseph@singaar.in" target="_blank" rel="noopener noreferrer">
+              <div className='flex gap-[5px] justify-center items-center'>
+  <img src={Mail} alt='' className='md:w-[29px] md:h-[29px] h-[14px] w-[18px]' />
+    <p className='text-[#F8F8F8] md:text-[19px] text-[14px]'>
+      ajithjoseph@singaar.in
+    </p>
+</div>
+</a>
+
+                <a 
+    href='tel:+919090717130' 
+    className='text-[#F8F8F8] md:text-[19px] text-[14px]'
+  >
                 <div className='flex justify-center items-center gap-[5px]'>
                   <img src={Phone} alt='' className='md:w-[29px]  md:h-[29px] h-[16px] w-[17px]' />
-                  <a 
-    href='tel:+919090717130' 
-    className='text-white md:text-[19px] text-[14px]'
-  >
+                
     +91 9090717130
-  </a>
+ 
                 </div>
+                </a>
               </div>
             </div>
 

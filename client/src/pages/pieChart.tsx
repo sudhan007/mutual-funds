@@ -45,24 +45,27 @@ export default function Piechart() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setTimeout(() => {
+            setIsVisible(true);  
+          }, 100); 
         } else {
-          setIsVisible(false)
+          setIsVisible(false);
         }
       },
       { threshold: 0.1 }
     );
-
+  
     if (chartRef.current) {
       observer.observe(chartRef.current);
     }
-
+  
     return () => {
       if (chartRef.current) {
         observer.unobserve(chartRef.current);
       }
     };
   }, []);
+  
 
   return (
     <div className="flex flex-col items-center justify-center w-full h-full">

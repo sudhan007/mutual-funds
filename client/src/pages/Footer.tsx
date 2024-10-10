@@ -3,6 +3,7 @@ import mail from "../assets/mail.png"
 import location from "../assets/location.png"
 import phone from "../assets/phone.png"
 import rightbar from "../assets/rightbar.png"
+import instagram from "../assets/instagram.png"
 export default function Footer(){
    
     return(
@@ -27,6 +28,11 @@ export default function Footer(){
     </p>
  </div>
  </div>
+ <div className="block ml-[27px] md:hidden">
+     <a href="https://www.instagram.com/singaarwealth/" target="_blank" rel="noopener noreferrer">
+                <img src={instagram} className="w-[69px]" alt="instagram" />
+                </a>
+            </div>
  <div className="lg:w-1/2  lg:py-10 lg:px-44  px-8  justify-start items-start flex flex-col gap-10">
     <div>
         <h1 className="text-[#F8F8F8] text-3xl font-medium">
@@ -34,14 +40,18 @@ export default function Footer(){
         </h1>
     </div>
     <div className="text-xl flex flex-col gap-5 text-[#F8F8F8B8]">
+    <a href="mailto:ajithjoseph@singaar.in" target="_blank" rel="noopener noreferrer">
 <div className="flex gap-3" >
 <img src={mail} alt="mail" className="w-8 h-8" />
 <p>ajithjoseph@singaar.in</p>
 </div>
+</a>
+<a href="tel:+919090717130">
 <div className="flex gap-3">
 <img src={phone} alt="call"  className="w-8 h-8"/>
 <p>9090717130 </p>
 </div>
+</a>
 <div className="flex gap-3">
 <img src={location} alt="Location" className="w-8 h-8" />
 <p>5/22 Main Road, KanyaKumari,629702</p>
@@ -49,6 +59,11 @@ export default function Footer(){
     </div>
  </div>
             </div>
+            <div className="md:block ml-[72px] mt-[40px] hidden">
+  <a href="https://www.instagram.com/singaarwealth/" target="_blank" rel="noopener noreferrer">
+    <img src={instagram} className="w-[69px]" alt="instagram" />
+  </a>
+</div>
             <div className="flex justify-end ">
                 <div className="relative">
                 <img src={rightbar} alt='vector' className='h-[200px] w-[100px]' />

@@ -57,18 +57,20 @@ export default function Chart() {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          setTimeout(() => {
+            setIsVisible(true);  
+          }, 100); 
         } else {
-          setIsVisible(false)
+          setIsVisible(false);
         }
       },
       { threshold: 0.1 }
     );
-
+  
     if (chartRef.current) {
       observer.observe(chartRef.current);
     }
-
+  
     return () => {
       if (chartRef.current) {
         observer.unobserve(chartRef.current);
@@ -205,7 +207,7 @@ export default function Chart() {
           }}
           isAnimationActive={isVisible}
           animationDuration={800}
-          animationEasing="ease-out"
+          // animationEasing="ease-out"
         />
       </PieChart>
     </div>
