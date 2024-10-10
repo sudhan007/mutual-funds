@@ -54,7 +54,7 @@ export default function Header({ aboutRef }: HeaderProps) {
   return (
     <>
       <div
-        className='lg:h-[100vh] h-screen w-screen overflow-hidden'
+        className='lg:h-[100vh] h-screen w-full overflow-hidden'
         style={{
           background:
             "linear-gradient(149.33deg, #0A155B 0.87%, #060D34 94.27%)",
