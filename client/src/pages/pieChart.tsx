@@ -63,6 +63,21 @@ export default function Piechart() {
       }
     };
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (chartRef.current) {
+        //@ts-ignore
+        const rect = chartRef.current.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+        setIsVisible(isVisible);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   
 
   return (

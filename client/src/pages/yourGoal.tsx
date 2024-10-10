@@ -199,7 +199,7 @@ const renderCustomBarShape = (props: any) => {
 };
 
 const GradientRect: React.FC<GradientRectProps> = ({ x, y, gradientId }) => (
-  <rect x={x} y={y} width={4} height={15} fill={`url(#${gradientId})`} />
+  <rect x={x} y={y} width={4} height={15} fill={gradientId} />
 );
 const CustomXAxisTick: React.FC<XAxisTickProps> = ({ x, y, payload }) => {
   const gradientId = (() => {
@@ -284,9 +284,9 @@ export default function YourGoal() {
                           return (
                               <div className="flex  lg:mt-[74px]  lg:mb-[56px] justify-center items-center" key={chartIndex}>
                                   <div className="lg:w-5/6 w-full justify-center flex items-center" ref={(el) => (chartRefs.current[uniqueIndex] = el)} data-index={uniqueIndex}>
-                                      <div className="lg:w-[460px] w-[95%]  lg:h-[312px] rounded bg-white shadow-lg border border-gray-100 flex flex-col gap-5 lg:gap-[40px] p-5">
+                                      <div className="lg:w-[460px] w-[300px] lg:h-[312px] rounded shadow-lg border border-gray-100 flex flex-col gap-5 lg:gap-[40px] p-5">
                                           <div>
-                                              <p className="text-[18px] font-medium">{chartData.title}</p>
+                                              <p className="text-[18px] font-medium w-3/4 ">{chartData.title}</p>
                                           </div>
                                           <div>
                                               {isVisible[uniqueIndex] && ( 

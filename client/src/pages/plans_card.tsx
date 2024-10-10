@@ -80,7 +80,7 @@ export default function PlanCards() {
                     </div>
                 </div>
 
-                <div className=" flex lg:flex-row flex-col w-[100%] items-center justify-center gap-[20px] mt-[54px] ">
+                <div className=" flex lg:flex-row flex-col gap-[20px] mt-[20px]  w-[100%] px-5  justify-center items-center lg:mt-[54px] ">
                     <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl w-[90%] h-auto  bg-white  md:w-[400px] md:h-[282px] ">
                         <div>
                             <div className="flex gap-[12px] items-center  ">
