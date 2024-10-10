@@ -255,10 +255,10 @@ export default function YourGoal() {
   // }, []);
 
   return (
-    <div className="mt-[124px]">
+    <div className="md:mt-[124px] mt-[74px] ">
       <div className="flex flex-col lg:items-center px-5 lg:p-0 lg:justify-center">
         <div className="flex flex-col lg:items-center lg:justify-center gap-[31px]">
-          <div className="w-full flex justify-center items-center">
+          <div className="w-full flex mb-[30px]  justify-center items-center">
             <img src={One} className="w-[158px] h-[128px]" alt="01" />
           </div>
           <p className="lg:text-[42px] text-[30px] bg-[linear-gradient(91.73deg,#1B2EA1_48.22%,#090F34_127.67%)] bg-clip-text text-transparent font-bold">
@@ -278,10 +278,10 @@ export default function YourGoal() {
               const uniqueIndex = groupIndex * chartGroup.length + chartIndex;
               return (
                 <div className="flex lg:mt-[74px] lg:mb-[56px] justify-center items-center" key={chartIndex}>
-                  <div className="lg:w-5/6 w-full justify-center flex items-center" ref={(el) => (chartRefs.current[uniqueIndex] = el)} data-index={uniqueIndex}>
-                    <div className="lg:w-[460px] w-[300px] lg:h-[312px] rounded shadow-lg border border-gray-100 flex flex-col gap-5 lg:gap-[40px] p-5">
+                  <div className="lg:w-5/6 w-screen justify-center flex items-center" ref={(el) => (chartRefs.current[uniqueIndex] = el)} data-index={uniqueIndex}>
+                    <div className="md:w-[400px] w-[90%] md:h-[312px] rounded shadow-lg border border-gray-100 flex flex-col gap-5 lg:gap-[40px] p-5">
                       <div>
-                        <p className="text-[18px] font-medium w-3/4 ">{chartData.title}</p>
+                        <p className="text-[18px] font-medium  ">{chartData.title}</p>
                       </div>
                       <div>
                     

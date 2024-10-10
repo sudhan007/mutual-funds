@@ -32,11 +32,11 @@ export default function PlanCards() {
 
             <div className="w-full flex flex-col lg:mt-[72px] mt-5 justify-center items-center">
                 <div className="flex lg:flex-row flex-col gap-[20px]  w-[100%] px-5  justify-center items-center">
-                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white md:w-[400px] md:h-[282px] w-[90%] h-auto ">
+                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white md:w-[400px] md:h-[282px] w-[100%] h-auto ">
                         <div>
                             <div className="flex gap-[12px] items-center  ">
                                 <img src={earning} alt="" className="w-[30px] h-[30px]" />
-                                <p className="text-[18px] font-medium">Investment Planning & Management</p>
+                                <p className="text-[16px] lg:text-[18px] font-medium">Investment Planning & Management</p>
                             </div>
                             <div className=" py-[17px] font-kumbh flex flex-col font-light gap-[15px]">
                                 <p className=" text-[#4A556C] text-[16px]  ">
@@ -49,11 +49,11 @@ export default function PlanCards() {
                         </div>
                     </div>
 
-                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white md:w-[400px] md:h-[282px] w-[90%] h-auto ">
+                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white md:w-[400px] md:h-[282px] w-[100%] h-auto ">
                         <div>
                             <div className="flex gap-[12px] items-center  ">
                                 <img src={goal} alt="" className="w-[30px] h-[30px]" />
-                                <p className="text-[18px] font-medium">Goal-Based Financial Planning</p>
+                                <p className="text-[16px] lg:text-[18px] font-medium">Goal-Based Financial Planning</p>
                             </div>
                             <div className=" py-[17px] font-kumbh flex flex-col font-light gap-[15px]">
                                 <p className=" text-[#4A556C]  text-[16px]   ">
@@ -64,11 +64,11 @@ export default function PlanCards() {
                         </div>
                     </div>
 
-                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white md:w-[400px] md:h-[282px] w-[90%] h-auto ">
+                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white md:w-[400px] md:h-[282px] w-[100%] h-auto ">
                         <div>
                             <div className="flex gap-[12px]  items-center ">
                                 <img src={rupee} alt="" className="w-[30px] h-[30px]" />
-                                <p className="text-[18px] font-medium">Cash Flow Analysis</p>
+                                <p className="text-[16px] lg:text-[18px] font-medium">Cash Flow Analysis</p>
                             </div>
                             <div className=" py-[17px] font-kumbh flex flex-col font-light gap-[15px]">
 
@@ -81,11 +81,11 @@ export default function PlanCards() {
                 </div>
 
                 <div className=" flex lg:flex-row flex-col gap-[20px] mt-[20px]  w-[100%] px-5  justify-center items-center lg:mt-[54px] ">
-                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl w-[90%] h-auto  bg-white  md:w-[400px] md:h-[282px] ">
+                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl w-[100%] h-auto  bg-white  md:w-[400px] md:h-[282px] ">
                         <div>
                             <div className="flex gap-[12px] items-center  ">
                                 <img src={increase} alt="" className="w-[30px] h-[30px]" />
-                                <p className="text-[18px] font-medium">Wealth Preservation and Growth</p>
+                                <p className="text-[16px] lg:text-[18px] font-medium">Wealth Preservation and Growth</p>
                             </div>
                             <div className="py-[17px] font-kumbh flex flex-col font-light gap-[15px]">
                                 <p className=" text-[#4A556C]  text-[16px]  ">
@@ -95,11 +95,11 @@ export default function PlanCards() {
                         </div>
                     </div>
 
-                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white md:w-[400px] md:h-[282px] w-[90%] h-auto ">
+                    <div className="border-[1px] border-[#EDEFF5] px-6 py-6 shadow  rounded-xl   bg-white md:w-[400px] md:h-[282px] w-[100%] h-auto ">
                         <div>
                             <div className="flex gap-[12px] items-center  ">
                                 <img src={tax} alt="" className="w-[30px] h-[30px]" />
-                                <p className="text-[18px] font-medium">Tax Planning</p>
+                                <p className="text-[16px] lg:text-[18px] font-medium">Tax Planning</p>
                             </div>
                             <div className="py-[17px] font-kumbh flex flex-col font-light gap-[15px]">
                                 <p className=" text-[#4A556C]  text-[16px]  ">
