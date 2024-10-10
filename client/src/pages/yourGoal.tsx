@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import One from "../assets/01.png";
 import {
   ChartConfig,
@@ -221,38 +221,38 @@ const CustomXAxisTick: React.FC<XAxisTickProps> = ({ x, y, payload }) => {
 
 export default function YourGoal() {
   const chartRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [isVisible, setIsVisible] = useState<boolean[]>(Array(chartDataList.length).fill(false));
+  //const [isVisible, setIsVisible] = useState<boolean[]>(Array(chartDataList.length).fill(false));
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const index = Number(entry.target.getAttribute("data-index"));
-        if (entry.isIntersecting) {
-          setIsVisible((prev) => {
-            const newVisible = [...prev];
-            newVisible[index] = true;
-            return newVisible;
-          });
-        } else {
-          setIsVisible((prev) => {
-            const newVisible = [...prev];
-            newVisible[index] = false;
-            return newVisible;
-          });
-        }
-      });
-    }, { threshold: 0.1 });
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       const index = Number(entry.target.getAttribute("data-index"));
+  //       if (entry.isIntersecting) {
+  //         setIsVisible((prev) => {
+  //           const newVisible = [...prev];
+  //           newVisible[index] = true;
+  //           return newVisible;
+  //         });
+  //       } else {
+  //         setIsVisible((prev) => {
+  //           const newVisible = [...prev];
+  //           newVisible[index] = false;
+  //           return newVisible;
+  //         });
+  //       }
+  //     });
+  //   }, { threshold: 0.1 });
 
-    chartRefs.current.forEach((chartRef) => {
-      if (chartRef) {
-        observer.observe(chartRef);
-      }
-    });
+  //   chartRefs.current.forEach((chartRef) => {
+  //     if (chartRef) {
+  //       observer.observe(chartRef);
+  //     }
+  //   });
 
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
+  //   return () => {
+  //     observer.disconnect();
+  //   };
+  // }, []);
 
   return (
     <div className="mt-[124px]">
