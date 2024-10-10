@@ -49,7 +49,7 @@ export default function Footer(){
 <a href="tel:+919090717130">
 <div className="flex gap-3">
 <img src={phone} alt="call"  className="w-8 h-8"/>
-<p>9090717130 </p>
+<p>+91 9090717130 </p>
 </div>
 </a>
 <div className="flex gap-3">
