@@ -19,13 +19,14 @@ export default function Home() {
 
   return (
     <>
-      <Header aboutRef={aboutRef} />
-      <AboutWealth />
-      <Partners />
+      <Header aboutRef={aboutRef} /> 
       <div ref={aboutRef}>
         <About />
       </div>
       <Profile />
+      
+      
+      
       <PlanCards />
       <Diverse_portfolio />
       <Chart />
@@ -33,6 +34,7 @@ export default function Home() {
       <YourGoal />
       <Allocation_Goal />
       <Your_Asset />
+      <Partners />
       <Footer />
     </>
   );

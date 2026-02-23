@@ -65,7 +65,7 @@ export default function Footer() {
             </a>
             <div className="flex gap-3">
               <img src={location} alt="Location" className="w-8 h-8" />
-              <p>5/22 Main Road, KanyaKumari,629702</p>
+              <p>No.66 , Water Tank Road , Nagercoil , 629001</p>
             </div>
           </div>
         </div>

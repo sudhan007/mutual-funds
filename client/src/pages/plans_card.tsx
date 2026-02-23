@@ -171,13 +171,19 @@ import bubble2 from '../assets/bubble2.png';
 
 export default function PlanCards() {
   const services = [
-    {
-      icon: trader,
-      title: 'BROKING & DEMAT ACCESS (Through Angel One)',
+     {
+      icon: goal,
+      title: 'Goal-Based Financial Planning',
       points: [
-        'We provide access to demat and trading facilities for execution convenience.',
-        'Singaar Wealth does not provide market timing, trading recommendations, or speculative strategies.',
-        "All execution support is aligned with the client's broader financial plan and risk understanding.",
+        'Aligns your investment and savings strategy with specific financial goals, such as buying a home, funding a wedding, or achieving financial independence.',
+      ],
+    },
+      {
+      icon: earning,
+      title: 'MUTUAL FUNDS',
+      points: [
+        'Long-Term Investing Within a Financial Plan At Singaar Wealth, mutual funds are used as part of a broader financial plan- not as standalone investments.',
+        'A Long-Term Wealth Building Tool',
       ],
     },
     {
@@ -189,20 +195,17 @@ export default function PlanCards() {
       ],
     },
     {
-      icon: earning,
-      title: 'MUTUAL FUNDS',
+      icon: trader,
+      title: 'BROKING & DEMAT ACCESS (Through Angel One)',
       points: [
-        'Long-Term Investing Within a Financial Plan At Singaar Wealth, mutual funds are used as part of a broader financial plan- not as standalone investments.',
-        'A Long-Term Wealth Building Tool',
+        'We provide access to demat and trading facilities for execution convenience.',
+        'Singaar Wealth does not provide market timing, trading recommendations, or speculative strategies.',
+        "All execution support is aligned with the client's broader financial plan and risk understanding.",
       ],
     },
-    {
-      icon: goal,
-      title: 'Goal-Based Financial Planning',
-      points: [
-        'Aligns your investment and savings strategy with specific financial goals, such as buying a home, funding a wedding, or achieving financial independence.',
-      ],
-    },
+  
+  
+   
     {
       icon: rupee,
       title: 'Cash Flow Analysis',
