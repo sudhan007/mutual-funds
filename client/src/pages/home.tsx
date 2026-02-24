@@ -11,7 +11,7 @@ import YourGoal from './yourGoal';
 import Allocation_Goal from './allocationGoal';
 import Your_Asset from './your_Asset';
 import Footer from './Footer';
-import AboutWealth from './aboutwealth';
+// import AboutWealth from './aboutwealth';
 
 export default function Home() {
   // Create a ref for the About component
@@ -19,14 +19,12 @@ export default function Home() {
 
   return (
     <>
-      <Header aboutRef={aboutRef} /> 
+      <Header aboutRef={aboutRef} />
       <div ref={aboutRef}>
         <About />
       </div>
       <Profile />
-      
-      
-      
+
       <PlanCards />
       <Diverse_portfolio />
       <Chart />
